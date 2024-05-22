@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "package": "me.heroku.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BowMixin",
+    "CreeperAccessor",
+    "CreeperMixin",
+    "CropMixin",
+    "EndermanAccessor",
+    "EndermanMixin",
+    "FarmlandMixin",
+    "FireMixin",
+    "GhastFireballAccessor",
+    "GhastFireballMixin",
+    "IceBlockMixin",
+    "OxidizableMixin",
+    "SaplingMixin",
+    "SkeletonMixin",
+    "SlimeMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "HeldItemRendererMixin",
+    "ModelPredicateProviderRegistryMixin"
+  ]
+}
