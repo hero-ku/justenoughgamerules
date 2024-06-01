@@ -2,8 +2,8 @@
 	"schemaVersion": 1,
 	"id": "justenoughgamerules",
 	"version": "${version}",
-	"name": "JustEnoughGameRules",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "JustEnoughGamerules",
+	"description": "Adds more gamerules to configure your game.",
 	"authors": [
 		"Me!"
 	],
