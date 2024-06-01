@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(CropBlock.class)
 public class CropMixin {
     @Inject(method = "randomTick", at = @At("HEAD"), cancellable = true)
-    public void stopOxidization(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo callbackInfo) {
+    public void stopCropGrowth(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo callbackInfo) {
         if (!world.getGameRules().getBoolean(Rules.DO_CROP_GROWTH)) {
             callbackInfo.cancel();
         }

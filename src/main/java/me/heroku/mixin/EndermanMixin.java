@@ -20,12 +20,13 @@ public abstract class EndermanMixin extends HostileEntity implements Angerable {
     @Inject(method = "teleportRandomly", at = @At("HEAD"), cancellable = true)
     public void teleportRandomlyWithinRadius(CallbackInfoReturnable<Boolean> callbackInfo) {
         var accessor = (EndermanAccessor) this;
-        var radius = this.getWorld().getGameRules().getInt(Rules.ENDERMAN_TElEPORT_RADIUS);
+        var radius = this.getWorld().getGameRules().get(Rules.ENDERMAN_TELEPORT_RADIUS).get();
+
+        double tpRadius = (this.random.nextDouble() * 64) - radius / 2;
 
         if (!this.getWorld().isClient() && this.isAlive()) {
-            System.out.println(radius);
             double d = this.getX() + (this.random.nextDouble() - 0.5) * radius;
-            double e = this.getY() + (double)(this.random.nextInt(radius) - radius / 2);
+            double e = this.getY() + (tpRadius - radius / 2);
             double f = this.getZ() + (this.random.nextDouble() - 0.5) * radius;
             callbackInfo.setReturnValue(accessor.invokeTeleportTo(d, e, f));
         } else {

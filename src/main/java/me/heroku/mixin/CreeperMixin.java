@@ -15,4 +15,3 @@ public abstract class CreeperMixin {
         ((CreeperAccessor) this).setExplosionRadius(((CreeperEntity)(Object) this).getWorld().getGameRules().getInt(Rules.CREEPER_EXPLOSION_RADIUS));
     }
 }
-

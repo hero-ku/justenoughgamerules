@@ -2,6 +2,7 @@ package me.heroku
 
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry
+import net.fabricmc.fabric.api.gamerule.v1.rule.DoubleRule
 import net.minecraft.world.GameRules
 import net.minecraft.world.GameRules.BooleanRule
 import net.minecraft.world.GameRules.IntRule
@@ -19,10 +20,11 @@ object Rules {
     lateinit var USE_SKELETON_ACCURACY: Key<BooleanRule>
     lateinit var SKELETON_ACCURACY: Key<IntRule>
     lateinit var CREEPER_EXPLOSION_RADIUS: Key<IntRule>
-    lateinit var ENDERMAN_TElEPORT_RADIUS: Key<IntRule>
+    lateinit var ENDERMAN_TELEPORT_RADIUS: Key<DoubleRule>
     lateinit var GHAST_FIREBALL_COOLDOWN: Key<IntRule>
     lateinit var SLIME_SPLIT_COUNT: Key<IntRule>
     lateinit var MAGMA_CUBE_SPLIT_COUNT: Key<IntRule>
+    lateinit var MINIMUM_SLIME_SIZE: Key<IntRule>
     lateinit var BOW_DRAW_SPEED: Key<IntRule>
 
     fun registerRules() {
@@ -35,10 +37,11 @@ object Rules {
         USE_SKELETON_ACCURACY = GameRuleRegistry.register("useSkeletonAccuracy", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false))
         SKELETON_ACCURACY = GameRuleRegistry.register("skeletonAccuracy", GameRules.Category.MISC, GameRuleFactory.createIntRule(0))
         CREEPER_EXPLOSION_RADIUS = GameRuleRegistry.register("creeperExplosionRadius", GameRules.Category.MISC, GameRuleFactory.createIntRule(3))
-        ENDERMAN_TElEPORT_RADIUS = GameRuleRegistry.register("endermanTeleportRadius", GameRules.Category.MISC, GameRuleFactory.createIntRule(64))
+        ENDERMAN_TELEPORT_RADIUS = GameRuleRegistry.register("endermanTeleportRadius", GameRules.Category.MISC, GameRuleFactory.createDoubleRule(64.0))
         GHAST_FIREBALL_COOLDOWN = GameRuleRegistry.register("ghastFireballCooldown", GameRules.Category.MISC, GameRuleFactory.createIntRule(60))
         SLIME_SPLIT_COUNT = GameRuleRegistry.register("slimeSplitCount", GameRules.Category.MISC, GameRuleFactory.createIntRule(2))
         MAGMA_CUBE_SPLIT_COUNT = GameRuleRegistry.register("magmaCubeSplitCount", GameRules.Category.MISC, GameRuleFactory.createIntRule(2))
         BOW_DRAW_SPEED = GameRuleRegistry.register("bowDrawTime", GameRules.Category.MISC, GameRuleFactory.createIntRule(20))
+        MINIMUM_SLIME_SIZE = GameRuleRegistry.register("minumumSlimeSize", GameRules.Category.MISC, GameRuleFactory.createIntRule(1))
     }
 }

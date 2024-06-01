@@ -1,5 +1,6 @@
 package me.heroku.mixin;
 
+import me.heroku.JustEnoughGameRules;
 import me.heroku.Rules;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.MobEntity;
@@ -24,5 +25,12 @@ public class SlimeMixin extends MobEntity {
             case ("Magma Cube") -> this.getWorld().getGameRules().getInt(Rules.MAGMA_CUBE_SPLIT_COUNT);
             default -> 2;
         } + this.random.nextInt(3);
+    }
+
+    @ModifyConstant(method = "remove", constant = @Constant(intValue = 1))
+    private int getMinSize(int previous) {
+        var world = JustEnoughGameRules.INSTANCE.getCurrentWorld();
+
+        return world.getGameRules().getInt(Rules.MINIMUM_SLIME_SIZE);
     }
 }
