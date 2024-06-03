@@ -42,6 +42,6 @@ object Rules {
         SLIME_SPLIT_COUNT = GameRuleRegistry.register("slimeSplitCount", GameRules.Category.MISC, GameRuleFactory.createIntRule(2))
         MAGMA_CUBE_SPLIT_COUNT = GameRuleRegistry.register("magmaCubeSplitCount", GameRules.Category.MISC, GameRuleFactory.createIntRule(2))
         BOW_DRAW_SPEED = GameRuleRegistry.register("bowDrawTime", GameRules.Category.MISC, GameRuleFactory.createIntRule(20))
-        MINIMUM_SLIME_SIZE = GameRuleRegistry.register("minumumSlimeSize", GameRules.Category.MISC, GameRuleFactory.createIntRule(1))
+        MINIMUM_SLIME_SIZE = GameRuleRegistry.register("minimumSlimeSize", GameRules.Category.MISC, GameRuleFactory.createIntRule(1))
     }
 }
