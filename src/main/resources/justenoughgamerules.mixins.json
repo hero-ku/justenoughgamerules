@@ -3,6 +3,7 @@
   "package": "me.heroku.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AnvilMixin",
     "BowMixin",
     "CreeperAccessor",
     "CreeperMixin",
@@ -23,7 +24,6 @@
     "defaultRequire": 1
   },
   "client": [
-    "HeldItemRendererMixin",
-    "ModelPredicateProviderRegistryMixin"
+    "HeldItemRendererMixin"
   ]
 }

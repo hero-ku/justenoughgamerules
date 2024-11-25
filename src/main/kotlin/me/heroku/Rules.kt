@@ -7,8 +7,6 @@ import net.minecraft.world.GameRules
 import net.minecraft.world.GameRules.BooleanRule
 import net.minecraft.world.GameRules.IntRule
 import net.minecraft.world.GameRules.Key
-import net.minecraft.world.GameRules.Rule
-import net.minecraft.world.World
 
 object Rules {
     lateinit var DO_CROP_TRAMPLING: Key<BooleanRule>
@@ -26,6 +24,8 @@ object Rules {
     lateinit var MAGMA_CUBE_SPLIT_COUNT: Key<IntRule>
     lateinit var MINIMUM_SLIME_SIZE: Key<IntRule>
     lateinit var BOW_DRAW_SPEED: Key<IntRule>
+    lateinit var ANVIL_DAMAGE_PER_BLOCK: Key<DoubleRule>
+    lateinit var ANVIL_MAX_DAMAGE: Key<IntRule>
 
     fun registerRules() {
         DO_CROP_TRAMPLING = GameRuleRegistry.register("doCropTrampling", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(true))
@@ -43,5 +43,7 @@ object Rules {
         MAGMA_CUBE_SPLIT_COUNT = GameRuleRegistry.register("magmaCubeSplitCount", GameRules.Category.MISC, GameRuleFactory.createIntRule(2))
         BOW_DRAW_SPEED = GameRuleRegistry.register("bowDrawTime", GameRules.Category.MISC, GameRuleFactory.createIntRule(20))
         MINIMUM_SLIME_SIZE = GameRuleRegistry.register("minimumSlimeSize", GameRules.Category.MISC, GameRuleFactory.createIntRule(1))
+        ANVIL_DAMAGE_PER_BLOCK = GameRuleRegistry.register("anvilDamagePerBlock", GameRules.Category.MISC, GameRuleFactory.createDoubleRule(2.0))
+        ANVIL_MAX_DAMAGE = GameRuleRegistry.register("anvilMaxDamage", GameRules.Category.MISC, GameRuleFactory.createIntRule(40))
     }
 }
